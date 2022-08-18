@@ -1,0 +1,1 @@
+curl -X POST "https://www.onurix.com/api/v1/url/short" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d name="AQUI_NOMBE_DE_URL" -d url-long="AQUI_URL_LARGA" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'

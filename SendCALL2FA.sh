@@ -1,0 +1,1 @@
+curl -X POST "https://www.onurix.com/api/v1/call/2fa/send-call" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d retries="AQUI_NUMERO_DE_INTENTOS" -d voice="AQUI_TIPO_DE_VOZ" -d phone="AQUI_EL_NUMERO_DE_CELULAR" -d app-name="AQUI_NOMBRE_APP" -d country-code="CO" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'
