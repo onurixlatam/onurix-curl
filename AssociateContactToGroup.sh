@@ -1,0 +1,1 @@
+curl -X POST "https://www.onurix.com/api/v1/contacts/group/add" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d group-id="AQUI_ID_GRUPO" -d id="AQUI_ID_CONTACTO" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'
