@@ -1,2 +1,2 @@
 # También puede usar wget
-curl -X POST "https://www.onurix.com/api/v1/block-phone" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d phone="AQUI_EL_NUMERO_DE_CELULAR" -d name="AQUI_NOMBRE_CONTACTO" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'
+curl -X POST "https://www.onurix.com/api/v1/block-phone" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d phone="AQUI_EL_NUMERO_DE_CELULAR" -d name="AQUI_NOMBRE_CONTACTO" -d channel="AQUI_CANAL_A_BLOQUEAR" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'

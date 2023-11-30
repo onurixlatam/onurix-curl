@@ -1,0 +1,1 @@
+curl -X POST "https://www.onurix.com/api/v1/contacts/create" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d name="AQUI_NOMBRE_CONTACTO"   -d lastname="AQUI_APELLIDO_CONTACTO" -d    email="AQUI_EMAIL_CONTACTO"  -d  phone="AQUI_TELEFONO_CONTACTO"  -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'

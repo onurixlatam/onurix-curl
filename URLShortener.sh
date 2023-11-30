@@ -1,1 +1,2 @@
-curl -X POST "https://www.onurix.com/api/v1/url/short" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d name="AQUI_NOMBE_DE_URL" -d url-long="AQUI_URL_LARGA" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'
+curl -X POST "https://www.onurix.com/api/v1/url/short" -d key="AQUI_SU_KEY" -d client="AQUI_SU_CLIENT" -d name="AQUI_NOMBE_DE_URL" -d url-long="AQUI_URL_LARGA" -d alias="OPCIONAL_AQUI_ALIAS" -d is-premium="OPCIONAL_AQUI_TRUE_OR_FALSE_DEFAULT_FALSE" -d  group-name="OPCIONAL_AQUI_NOMBRE_DE_GRUPO" -d domain-name="OPCIONAL_AQUI_NOMBRE_DOMINIO_REGISTRADO" -d expiration-time-statistics="OPCIONAL_AQUI_TIEMPO_ALMACENAMIENTO-ESTADITICAS" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'
+

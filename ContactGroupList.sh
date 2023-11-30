@@ -1,0 +1,1 @@
+curl -X GET "https://www.onurix.com/api/v1/group/AQUI_ID_GRUPO/contacts/list?key=AQUI_SU_KEY&client=AQUI_SU_CLIENT" -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json'
