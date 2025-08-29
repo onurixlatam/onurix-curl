@@ -85,10 +85,11 @@ A continuación, se detalla cada endpoint de ejemplo y el método HTTP que utili
 | `URLShortener.sh` | `POST` | Crea una URL corta.                        |
 
 ### WhatsApp
-| Archivo                  | Método        | Descripción                                                     |
-| :----------------------- | :------------ | :-------------------------------------------------------------- |
-| `SendWhatsApp2FA.sh`     | `POST (JSON)` | Envía un mensaje de WhatsApp con un código de verificación 2FA. |
-| `WhatsAppGeneralSend.sh` | `POST (JSON)` | Envía un mensaje de WhatsApp usando una plantilla.              |
+| Archivo                          | Método        | Descripción                                                     |
+| :------------------------------- | :------------ | :-------------------------------------------------------------- |
+| `SendWhatsApp2FA.sh`             | `POST (JSON)` | Envía un mensaje de WhatsApp con un código de verificación 2FA. |
+| `WhatsAppGeneralSend.sh`         | `POST (JSON)` | Envía un mensaje de WhatsApp usando una plantilla.              |
+| `SendWhatsAppWithoutTemplate.sh` | `POST (JSON)` | Envía un mensaje de WhatsApp sin usar una plantilla.            |
 
 ## 📖 Uso
 
@@ -140,16 +141,18 @@ Para usar los ejemplos, necesitas reemplazar los valores de los placeholders (`A
 
 ### Parámetros Específicos
 
-| Servicio     | Parámetro    | Descripción                                           |
-| :----------- | :----------- | :---------------------------------------------------- |
-| **SMS**      | `sms`        | Contenido del mensaje de texto a enviar.              |
-| **Llamadas** | `message`    | Mensaje que se reproducirá en la llamada.             |
-| **Llamadas** | `voice`      | Voz a usar en la llamada (ej. `Mariana`, `Penelope`). |
-| **Llamadas** | `audio-code` | ID de un audio previamente cargado en la plataforma.  |
-| **URL**      | `url-long`   | La URL original que deseas acortar.                   |
-| **URL**      | `alias`      | (Opcional) Alias personalizado para la URL corta.     |
-| **WhatsApp** | `templateId` | ID de la plantilla de WhatsApp aprobada por Meta.     |
-| **WhatsApp** | `data`       | Un objeto JSON con los valores para la plantilla.     |
+| Servicio     | Parámetro            | Descripción                                           |
+| :----------- | :------------------- | :---------------------------------------------------- |
+| **SMS**      | `sms`                | Contenido del mensaje de texto a enviar.              |
+| **Llamadas** | `message`            | Mensaje que se reproducirá en la llamada.             |
+| **Llamadas** | `voice`              | Voz a usar en la llamada (ej. `Mariana`, `Penelope`). |
+| **Llamadas** | `audio-code`         | ID de un audio previamente cargado en la plataforma.  |
+| **URL**      | `url-long`           | La URL original que deseas acortar.                   |
+| **URL**      | `alias`              | (Opcional) Alias personalizado para la URL corta.     |
+| **WhatsApp** | `templateId`         | ID de la plantilla de WhatsApp aprobada por Meta.     |
+| **WhatsApp** | `data`               | Un objeto JSON con los valores para la plantilla.     |
+| **WhatsApp** | `from_phone_meta_id` | ID del teléfono de origen de WhatsApp.                |
+| **WhatsApp** | `message`            | Objeto JSON con el mensaje a enviar.                  |
 
 ### Ejemplo de Petición para `sms/SendSMS.sh`
 
@@ -166,31 +169,11 @@ curl --location 'https://onurix.com/api/v1/send-sms' \
 ```bash
 curl --location 'https://onurix.com/api/v1/whatsapp/send?key=************&client=1&templateId=123546' \
 --header 'Content-Type: application/json' \
---data '{
-    "phones": "30012345678",
-    "header": {
-        "1": {
-            "type": "image",
-            "value": {
-                "link": "https://tudominio.com/archivo-video.mp4"
-            }
-        }
-    },
-    "body": {
-        "1": {
-            "type": "text",
-            "value": ""
-        },
-        "2": {
-            "type": "text",
-            "value": ""
-        }
-    },
-    "button": {}
-}'
+--data '{ "phones": "30012345678", "header": { "1": { "type": "image", "value": { "link": "https://tudominio.com/archivo-video.mp4" } } }, "body": { "1": { "type": "text", "value": "" }, "2": { "type": "text", "value": "" } }, "button": {} }'
 ```
 
 ## 📚 Documentación Completa de la API
+
 
 Para obtener una descripción detallada de todos los endpoints, parámetros y respuestas de la API, por favor consulta nuestra documentación oficial en [https://docs.onurix.com/](https://docs.onurix.com/).
 
