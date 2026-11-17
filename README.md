@@ -144,6 +144,7 @@ Para usar los ejemplos, necesitas reemplazar los valores de los placeholders (`A
 | Servicio     | Parámetro            | Descripción                                           |
 | :----------- | :------------------- | :---------------------------------------------------- |
 | **SMS**      | `sms`                | Contenido del mensaje de texto a enviar.              |
+| **SMS**      | `is-transactional`   | (Opcional) `1` (por defecto): mensaje transaccional. `0`: mensaje comercial; los números inscritos en el Registro de Números Excluidos (RNE) que no aceptan SMS se rechazan con el error `1010`. |
 | **Llamadas** | `message`            | Mensaje que se reproducirá en la llamada.             |
 | **Llamadas** | `voice`              | Voz a usar en la llamada (ej. `Mariana`, `Penelope`). |
 | **Llamadas** | `audio-code`         | ID de un audio previamente cargado en la plataforma.  |
@@ -161,8 +162,11 @@ curl --location 'https://onurix.com/api/v1/send-sms' \
 --form 'client="1"' \
 --form 'key="********************"' \
 --form 'phone="30012345678"' \
---form 'sms="Este es un mensaje de prueba del API de Onurix.com"'
+--form 'sms="Este es un mensaje de prueba del API de Onurix.com"' \
+--form 'is-transactional="1"'
 ```
+
+Con `is-transactional="0"` el mensaje se envía como comercial.
 
 ### Ejemplo de petición para `whatsapp\SendWhatsApp2FA.sh`
 
